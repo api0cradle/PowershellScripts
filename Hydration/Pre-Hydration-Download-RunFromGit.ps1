@@ -8,7 +8,7 @@
 # Posh Command to start this script directly from GIT:
 # IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/api0cradle/PowershellScripts/master/Hydration/Pre-Hydration-Download-RunFromGit.ps1')
 # Or for the brave:
-# IEX (New-Object Net.WebClient).DownloadString('https://goo.gl/N0XK6f')
+# IEX (New-Object Net.WebClient).DownloadString('https://goo.gl/N0XK6f'); Download-PreHydrationFiles
 
 # Web Client object
 $wc = New-Object System.Net.WebClient
