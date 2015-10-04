@@ -10,12 +10,18 @@
 # Or for the brave:
 # IEX (New-Object Net.WebClient).DownloadString('https://goo.gl/N0XK6f')
 
+# Web Client object
+$wc = New-Object System.Net.WebClient
+$CSVFile = "https://github.com/api0cradle/PowershellScripts/raw/master/Hydration/Pre-HydrationFiles.csv"
 
 # CSV file with download list
-$FilesToDownload = "https://github.com/api0cradle/PowershellScripts/raw/master/Hydration/Pre-HydrationFiles.csv"
+$FilesToDownload = "c:\Downloads\Pre-HydrationFiles.csv"
 
 # Where to put the downloaded files
 $DestinationFolder = "c:\Downloads\"
+
+# Download CSV from GIT
+$wc.DownloadFile($CSVFile, $FilesToDownload)
 
 # Read content of the CSV file
 $HydrationFiles = Import-csv $FilesToDownload
