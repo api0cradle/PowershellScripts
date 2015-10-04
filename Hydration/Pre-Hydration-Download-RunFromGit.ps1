@@ -1,4 +1,7 @@
-﻿# Download some of the needed files for hydration
+﻿function Download-PreHydrationFiles
+{
+
+# Download some of the needed files for hydration
 # Author: Oddvar Håland Moe
 # msitpros.com
 # 
@@ -88,3 +91,4 @@ write-host "Windows 7 SP1 x64"
 write-host "Windows 8.1 x64"
 write-host "Windows Server 2012 R2"
 write-host "Link to guide is here: http://deploymentresearch.com/Research/Post/407/The-Hydration-Kit-for-System-Center-2012-R2-is-available-for-download"
+}
