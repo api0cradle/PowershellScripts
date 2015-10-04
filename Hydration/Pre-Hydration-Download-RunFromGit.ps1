@@ -20,15 +20,15 @@ $FilesToDownload = "c:\Downloads\Pre-HydrationFiles.csv"
 # Where to put the downloaded files
 $DestinationFolder = "c:\Downloads\"
 
+#Pre-Checks
+#Verify C:\Downloads - Create if missing
+if(!(test-path $DestinationFolder)){New-Item -ItemType Directory $DestinationFolder}
+
 # Download CSV from GIT
 $wc.DownloadFile($CSVFile, $FilesToDownload)
 
 # Read content of the CSV file
 $HydrationFiles = Import-csv $FilesToDownload
-
-#Pre-Checks
-#Verify C:\Downloads - Create if missing
-if(!(test-path $DestinationFolder)){New-Item -ItemType Directory $DestinationFolder}
 
 #Function for download with progress
 function downloadFile($url, $targetFile)
