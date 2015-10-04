@@ -3,11 +3,13 @@
 # msitpros.com
 # 
 # Posh Command to start this script directly from GIT:
-# IEX (New-Object Net.WebClient).DownloadString('https://github.com/api0cradle/PowershellScripts/Hydration/Pre-Hydration-Download-RunFromGit')
+# IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/api0cradle/PowershellScripts/master/Hydration/Pre-Hydration-Download-RunFromGit.ps1')
+# Or for the brave:
+# IEX (New-Object Net.WebClient).DownloadString('https://goo.gl/N0XK6f')
 
 
 # CSV file with download list
-$FilesToDownload = "https://github.com/api0cradle/PowershellScripts/Hydration/Pre-HydrationFiles.csv"
+$FilesToDownload = "https://github.com/api0cradle/PowershellScripts/raw/master/Hydration/Pre-HydrationFiles.csv"
 
 # Where to put the downloaded files
 $DestinationFolder = "c:\Downloads\"
