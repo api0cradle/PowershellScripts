@@ -1,7 +1,7 @@
 URL,filename
 http://download.microsoft.com/download/6/A/E/6AEA92B0-A412-4622-983E-5B305D2EBE56/adk/adksetup.exe,adk8.1setup.exe
 http://download.microsoft.com/download/8/1/9/8197FEB9-FABE-48FD-A537-7D8709586715/adk/adksetup.exe,adk10setup.exe
-http://download.microsoft.com/download/B/F/5/BF5DF779-ED74-4BEC-A07E-9EB25694C6BB/MicrosoftDeploymentToolkit2013_x64.msi
+http://download.microsoft.com/download/B/F/5/BF5DF779-ED74-4BEC-A07E-9EB25694C6BB/MicrosoftDeploymentToolkit2013_x64.msi,MicrosoftDeploymentToolkit2013_x64.msi
 http://download.microsoft.com/download/5/2/9/529FEF7B-2EFB-439E-A2D1-A1533227CD69/SQLEXPR_x64_ENU.exe,SQLEXPR_x64_ENU.exe
 http://download.microsoft.com/download/0/D/E/0DE81822-D03F-4075-93B6-DDEAA0E095F7/MicrosoftDeploymentToolkit2013_x64.msi,MicrosoftDeploymentToolkit2013U1_x64.msi
 http://download.microsoft.com/download/e/1/c/e1c773de-73ba-494a-a5ba-f24906ecf088/vcredist_x86.exe,Microsoft Visual C++ 2005 SP1 - x86-x64\vcredist_x86.exe
