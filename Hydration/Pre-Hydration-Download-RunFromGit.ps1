@@ -81,7 +81,14 @@ downloadFile $source $destination
 write-host "Downloading ADK8.1 content - please wait a while :-) "
 $ADKDownloadFolder = $DestinationFolder+"ADK8.1"
 New-Item -Path $ADKDownloadFolder -type directory
-$ADKDownloadCmd = "adksetup.exe /layout $ADKDownloadFolder /quiet"
+$ADKDownloadCmd = "adk8.1setup.exe /layout $ADKDownloadFolder /quiet"
+$ADKDownloadCmd = $DestinationFolder+$ADKDownloadCmd
+IEX "cmd /c start /wait $ADKDownloadCmd" | Out-Null
+
+write-host "Downloading ADK10 content - please wait a while :-) "
+$ADKDownloadFolder = $DestinationFolder+"ADK10"
+New-Item -Path $ADKDownloadFolder -type directory
+$ADKDownloadCmd = "adk10setup.exe /layout $ADKDownloadFolder /quiet"
 $ADKDownloadCmd = $DestinationFolder+$ADKDownloadCmd
 IEX "cmd /c start /wait $ADKDownloadCmd" | Out-Null
 
