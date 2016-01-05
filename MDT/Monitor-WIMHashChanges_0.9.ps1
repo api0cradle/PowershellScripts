@@ -45,8 +45,7 @@ $Wims |
     foreach{
         $FullName = $_.FullName
         $hash = Get-FileHash -path $_.FullName-Algorithm MD5
-        #write-host $_.FullName
-        
+                
         $properties = @{'FullName'=$_.FullName;
                         'Hash'=$hash.Hash;
                         'Algorithm'=$hash.Algorithm;
@@ -61,13 +60,12 @@ $Wims |
             if($ChecksumCSV -like "*$FullName*"){
                 
                 #Select only lines that is relevant to filename and select the latest unique entry in the CSV
-                $Unique = $ChecksumCSV | where{$_.FullName -like "*$FullName*"} | Sort-Object -Property Date | Sort-Object -Property hash -Unique | Select-Object Hash
+                $Unique = $ChecksumCSV | where{$_.FullName -like "*$FullName*"} | Sort-Object -Property Date -Descending | Select-object -First 1 | Select-Object Hash
                 
                 #Compare Hash from ChecksumDBFile with Hash from the wim file               
                 if($Unique.Hash -like $hash.Hash){
                     Write-EventLog -LogName Application -Source WIMHash -EntryType Information -EventId 1 -Message "The hash of the file $FullName has not changed since last run. `n Current hash is: $hash"
                 }else{
-                    #Write-output "NO HASH MATCH"
                     write-eventlog -LogName Application -Source WIMHash -EntryType Error -EventId 1 -Message "The file $FullName has a changed Checksum since last run, someone did something! `n Last hash from ChecksumDBFile: $Unique `n Current hash of file is: $Hash"
                 }
              }
