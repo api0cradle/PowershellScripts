@@ -70,8 +70,7 @@
         }
         catch
         {
-            Write-Host "Was not able to do my stuff"
-            Write-Error $_.Exception.Message
+            return $_.Exception.Message
         }
         finally
         {

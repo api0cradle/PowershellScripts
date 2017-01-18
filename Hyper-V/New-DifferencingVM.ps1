@@ -98,14 +98,13 @@
     
         try
         {
-            New-VM -Name $VMName -MemoryStartupBytes $VMMemory -SwitchName $VMNetwork -Path $VMLocation -NoVHD -Verbose
-            New-VHD -ParentPath $ParentVHD -Differencing -Path "$VMLocation\$VMName\Virtual Hard Disks\$VMName-Disk1.vhdx" -SizeBytes $VMDiskSize -Verbose
-            Add-VMHardDiskDrive -VMName $VMName -Path "$VMLocation\$VMName\Virtual Hard Disks\$VMName-Disk1.vhdx" -Verbose
+            New-VM -Name $VMName -MemoryStartupBytes $VMMemory -SwitchName $VMNetwork -Path $VMLocation -NoVHD
+            New-VHD -ParentPath $ParentVHD -Differencing -Path "$VMLocation\$VMName\Virtual Hard Disks\$VMName-Disk1.vhdx" -SizeBytes $VMDiskSize
+            Add-VMHardDiskDrive -VMName $VMName -Path "$VMLocation\$VMName\Virtual Hard Disks\$VMName-Disk1.vhdx"
         }
         catch
         {
-            Write-Host "Was not able to do my stuff"
-            Write-Error $_.Exception.Message
+            return $_.Exception.Message
         }
         finally
         {
